@@ -20,6 +20,7 @@ const EditJournalEntry = () => {
   const [newAttachments, setNewAttachments] = useState([]);
   const [deletingAttachmentId, setDeletingAttachmentId] = useState(null);
   const redirectOnSuccessRef = useRef(false);
+  const postedRedirectRef = useRef(false);
 
   useEffect(() => {
     return () => {
@@ -39,6 +40,12 @@ const EditJournalEntry = () => {
 
   useEffect(() => {
     if (journalEntryDetails) {
+      if (journalEntryDetails.status === 'posted' && !postedRedirectRef.current) {
+        postedRedirectRef.current = true;
+        toast.error('لا يمكن تعديل القيد المرحل', { rtl: true });
+        navigate('/journal-entries');
+        return;
+      }
       setForm({
         entry_date: journalEntryDetails.entry_date || '',
         description: journalEntryDetails.description || '',
@@ -67,7 +74,7 @@ const EditJournalEntry = () => {
           : []
       );
     }
-  }, [journalEntryDetails]);
+  }, [journalEntryDetails, navigate]);
 
   useEffect(() => {
     if (success) {
