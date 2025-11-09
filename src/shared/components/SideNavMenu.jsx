@@ -673,6 +673,47 @@ const SideNavMenu = ({ handleLinkClick }) => {
           <span style={{ marginRight: "0.25rem", color: "#182d40" }}>الشجرة المحاسبية</span>
         </Link>
       </li>
+      {/* الفترات المالية */}
+      <li className={location.pathname.startsWith("/financial-periods") ? 'active' : ''} style={{ marginBottom: "0.25rem", position: 'relative', display: 'flex', zIndex: -1 }}>
+        <div className="icon" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "25px", height: "25px" }}>
+          <FaCalendarAlt style={{ fontSize: "20px", color: "#182d40" }} />
+        </div>
+        <Link to="/financial-periods" onClick={handleLinkClick}>
+          <span style={{ marginRight: "0.25rem", color: "#182d40" }}>الفترات المالية</span>
+        </Link>
+      </li>
+      <li className={location.pathname.startsWith("/trial-balance") ? 'active' : ''} style={{ marginBottom: "0.25rem", position: 'relative', display: 'flex', zIndex: -1 }}>
+        <div className="icon" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "25px", height: "25px" }}>
+          <FaChartBar style={{ fontSize: "20px", color: "#182d40" }} />
+        </div>
+        <Link to="/trial-balance" onClick={handleLinkClick}>
+          <span style={{ marginRight: "0.25rem", color: "#182d40" }}>ميزان المراجعة</span>
+        </Link>
+      </li>
+      <li className={location.pathname.startsWith("/account-statement") ? 'active' : ''} style={{ marginBottom: "0.25rem", position: 'relative', display: 'flex', zIndex: -1 }}>
+        <div className="icon" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "25px", height: "25px" }}>
+          <FaClipboard style={{ fontSize: "20px", color: "#182d40" }} />
+        </div>
+        <Link to="/account-statement" onClick={handleLinkClick}>
+          <span style={{ marginRight: "0.25rem", color: "#182d40" }}>كشف الحسابات</span>
+        </Link>
+      </li>
+      <li className={location.pathname.startsWith("/receipt-vouchers") ? 'active' : ''} style={{ marginBottom: "0.25rem", position: 'relative', display: 'flex', zIndex: -1 }}>
+        <div className="icon" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "25px", height: "25px" }}>
+          <FaCashRegister style={{ fontSize: "20px", color: "#182d40" }} />
+        </div>
+        <Link to="/receipt-vouchers" onClick={handleLinkClick}>
+          <span style={{ marginRight: "0.25rem", color: "#182d40" }}>إيصال استلام نقدية</span>
+        </Link>
+      </li>
+      <li className={location.pathname.startsWith("/payment-vouchers") ? 'active' : ''} style={{ marginBottom: "0.25rem", position: 'relative', display: 'flex', zIndex: -1 }}>
+        <div className="icon" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "25px", height: "25px" }}>
+          <FaHandHoldingUsd style={{ fontSize: "20px", color: "#182d40" }} />
+        </div>
+        <Link to="/payment-vouchers" onClick={handleLinkClick}>
+          <span style={{ marginRight: "0.25rem", color: "#182d40" }}>سندات الصرف</span>
+        </Link>
+      </li>
       <li className={location.pathname.startsWith("/journal-entries") ? 'active' : ''} style={{ marginBottom: "0.25rem", position: 'relative', display: 'flex', zIndex: -1 }}>
         <div className="icon" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "25px", height: "25px" }}>
           <FaBookOpen style={{ fontSize: "20px", color: "#182d40" }} />

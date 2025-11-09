@@ -58,6 +58,18 @@ import CurrencyDetails from './features/pages/Accounting/Currencies/CurrencyDeta
 import ExchangeRates from './features/pages/Accounting/ExchangeRates/ExchangeRates';
 import AddExchangeRate from './features/pages/Accounting/ExchangeRates/AddExchangeRate';
 import ExchangeRateDetails from './features/pages/Accounting/ExchangeRates/ExchangeRateDetails';
+import FinancialPeriods from './features/pages/Accounting/FinancialPeriods/FinancialPeriods';
+import AddFinancialPeriod from './features/pages/Accounting/FinancialPeriods/AddFinancialPeriod';
+import EditFinancialPeriod from './features/pages/Accounting/FinancialPeriods/EditFinancialPeriod';
+import FinancialPeriodDetails from './features/pages/Accounting/FinancialPeriods/FinancialPeriodDetails';
+import TrialBalance from './features/pages/Accounting/Reports/TrialBalance';
+import AccountStatement from './features/pages/Accounting/Reports/AccountStatement';
+import ReceiptVouchers from './features/pages/Accounting/ReceiptVouchers/ReceiptVouchers';
+import AddReceiptVoucher from './features/pages/Accounting/ReceiptVouchers/AddReceiptVoucher';
+import ReceiptVoucherDetails from './features/pages/Accounting/ReceiptVouchers/ReceiptVoucherDetails';
+import PaymentVouchers from './features/pages/Accounting/PaymentVouchers/PaymentVouchers';
+import AddPaymentVoucher from './features/pages/Accounting/PaymentVouchers/AddPaymentVoucher';
+import PaymentVoucherDetails from './features/pages/Accounting/PaymentVouchers/PaymentVoucherDetails';
 import Vendors from './features/pages/Accounting/Vendors/Vendors';
 import AddVendor from './features/pages/Accounting/Vendors/AddVendor';
 import EditVendor from './features/pages/Accounting/Vendors/EditVendor';
@@ -138,6 +150,18 @@ function App() {
               <Route path="journal-entries/add" element={<AddJournalEntry />} />
               <Route path="journal-entries/edit/:id" element={<EditJournalEntry />} />
               <Route path="journal-entries/view/:id" element={<JournalEntryDetails />} />
+              <Route path="financial-periods" element={<FinancialPeriods />} />
+              <Route path="financial-periods/add" element={<AddFinancialPeriod />} />
+              <Route path="financial-periods/edit/:id" element={<EditFinancialPeriod />} />
+              <Route path="financial-periods/view/:id" element={<FinancialPeriodDetails />} />
+              <Route path="trial-balance" element={<TrialBalance />} />
+              <Route path="account-statement" element={<AccountStatement />} />
+              <Route path="receipt-vouchers" element={<ReceiptVouchers />} />
+              <Route path="receipt-vouchers/add" element={<AddReceiptVoucher />} />
+              <Route path="receipt-vouchers/view/:id" element={<ReceiptVoucherDetails />} />
+              <Route path="payment-vouchers" element={<PaymentVouchers />} />
+              <Route path="payment-vouchers/add" element={<AddPaymentVoucher />} />
+              <Route path="payment-vouchers/view/:id" element={<PaymentVoucherDetails />} />
               <Route path="currencies" element={<Currencies />} />
               <Route path="currencies/add" element={<AddCurrency />} />
               <Route path="currencies/edit/:id" element={<EditCurrency />} />
