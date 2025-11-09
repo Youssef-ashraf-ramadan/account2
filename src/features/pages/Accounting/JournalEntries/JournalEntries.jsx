@@ -191,22 +191,24 @@ const JournalEntries = () => {
                         </button>
                         <button 
                           title="تعديل" 
-                          onClick={() => navigate(`/journal-entries/edit/${e.id}`)} 
+                          onClick={() => { if (e.status !== 'posted') { navigate(`/journal-entries/edit/${e.id}`); } }}
                           style={{ 
-                            backgroundColor: 'var(--gray-color)', 
+                            backgroundColor: e.status === 'posted' ? 'var(--border-color)' : 'var(--gray-color)', 
                             color: 'white', 
                             border: 'none', 
                             padding: '10px 12px', 
                             borderRadius: '8px', 
-                            cursor: 'pointer',
+                            cursor: e.status === 'posted' ? 'not-allowed' : 'pointer',
                             fontSize: '14px',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            transition: 'all 0.2s'
+                            transition: 'all 0.2s',
+                            opacity: e.status === 'posted' ? 0.6 : 1
                           }}
-                          onMouseEnter={(ev) => { ev.target.style.opacity = '0.9'; }}
-                          onMouseLeave={(ev) => { ev.target.style.opacity = '1'; }}
+                          disabled={e.status === 'posted'}
+                          onMouseEnter={(ev) => { if (e.status !== 'posted') { ev.target.style.opacity = '0.9'; } }}
+                          onMouseLeave={(ev) => { if (e.status !== 'posted') { ev.target.style.opacity = '1'; } }}
                         >
                           <FaEdit style={{ color: 'white' }} />
                         </button>
