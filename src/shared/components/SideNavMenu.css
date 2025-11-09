@@ -1,0 +1,290 @@
+/* Light Forest Sidebar Theme */
+.main-ul {
+  position: relative;
+  z-index: 2;
+}
+
+/* Sidebar List Items */
+.main-ul li {
+  position: relative;
+  z-index: 2;
+  margin: 8px 8px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: transparent;
+  width: calc(100% - 16px);
+  border: 1px solid transparent;
+}
+
+.main-ul li:hover {
+  background: rgba(0, 106, 255, 0.08);
+  transform: translateX(5px);
+  border-color: rgba(0, 106, 255, 0.2);
+}
+
+.main-ul li.active {
+  background: rgba(0, 106, 255, 0.1);
+  border: 1px solid var(--main-color);
+}
+
+.main-ul li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.main-ul li a:hover {
+  color: var(--main-color) !important;
+}
+
+.main-ul li:hover a,
+.main-ul li:hover a span {
+  color: var(--main-color) !important;
+}
+
+.main-ul li.active:hover a,
+.main-ul li.active:hover a span {
+  color: var(--main-color) !important;
+}
+
+.main-ul li.active:hover .icon svg,
+.main-ul li.active:hover .icon {
+  color: var(--main-color) !important;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  background-color: var(--basic-color) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dropdown-item {
+  color: var(--text-primary) !important;
+  padding: 8px 16px !important;
+  font-weight: bold !important;
+  font-size: 15px !important;
+  transition: all 0.3s ease !important;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 106, 255, 0.1) !important;
+  color: var(--main-color) !important;
+}
+
+.dropdown-item.active {
+  background-color: rgba(0, 106, 255, 0.1) !important;
+  color: var(--main-color) !important;
+}
+
+.dropdown-item.active:hover {
+  background-color: rgba(0, 106, 255, 0.15) !important;
+  color: var(--main-color) !important;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 106, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 106, 255, 0.5);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 106, 255, 0.3) rgba(255, 255, 255, 0.5);
+}
+
+.main-ul li.active a {
+  color: var(--main-color) !important;
+  background-color: transparent !important;
+}
+
+/* Icons */
+.main-ul li .icon {
+  position: relative;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.main-ul li:hover .icon svg,
+.main-ul li:hover .icon {
+  color: var(--main-color) !important;
+}
+
+.main-ul li.active .icon svg,
+.main-ul li.active .icon {
+  color: var(--main-color) !important;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+}
+
+/* HR Dropdown z-index */
+.main-ul li.hr-dropdown {
+  z-index: 232323 !important;
+}
+
+.dropdown-toggle {
+  background: none !important;
+  border: none !important;
+  color: var(--text-primary) !important;
+  border-radius: 12px !important;
+  padding: 12px 8px !important;
+  width: 100% !important;
+  text-align: right !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.dropdown-toggle:hover {
+  color: var(--main-color) !important;
+  background: rgba(0, 106, 255, 0.08) !important;
+}
+
+.dropdown-toggle:hover span {
+  color: var(--main-color) !important;
+}
+
+/* Override inline styles for HR and Reports dropdowns on hover */
+.main-ul li.dropdown:hover .dropdown-toggle,
+.main-ul li.dropdown:hover .dropdown-toggle span,
+.main-ul li.hr-dropdown:hover .dropdown-toggle,
+.main-ul li.hr-dropdown:hover .dropdown-toggle span {
+  color: var(--main-color) !important;
+}
+
+.dropdown-toggle:focus {
+  box-shadow: none !important;
+}
+
+/* Dropdown Menu */
+.dropdown ul {
+  background: var(--basic-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+  padding: 12px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.dropdown ul::before {
+  display: none;
+}
+
+.dropdown ul li {
+  margin: 4px 8px;
+  background: none;
+  border-radius: 8px;
+}
+
+.dropdown ul li:hover {
+  background: rgba(0, 106, 255, 0.08);
+  transform: translateX(3px);
+}
+
+.dropdown ul li a {
+  padding: 10px 16px;
+  font-size: 15px;
+  border-radius: 8px;
+  color: var(--text-primary) !important;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+.dropdown ul li a:hover {
+  color: var(--main-color) !important;
+  text-shadow: none;
+  background: rgba(0, 106, 255, 0.1);
+}
+
+.dropdown ul li.active a {
+  color: var(--main-color) !important;
+  background: rgba(0, 106, 255, 0.1);
+  text-shadow: none;
+}
+
+.dropdown ul li.active a:hover {
+  background: rgba(0, 106, 255, 0.15);
+  color: var(--main-color) !important;
+}
+
+/* Glowing Particles Effect */
+.main-ul li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  width: 4px;
+  height: 4px;
+  background: var(--main-color);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.main-ul li:hover::before,
+.main-ul li.active::before {
+  opacity: 0.6;
+  transform: translateY(-50%) scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-ul li {
+    margin: 6px 8px;
+  }
+  
+  .main-ul li a {
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+  
+  .dropdown-toggle {
+    padding: 10px 6px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .dropdown ul {
+    margin-top: 6px;
+    padding: 8px 0;
+  }
+  
+  .dropdown ul li a {
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
